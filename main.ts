@@ -1,12 +1,5 @@
-let arrowLeft = images.arrowImage(ArrowNames.West)
-let arrowRight = images.arrowImage(ArrowNames.East)
-let arrowNorth = images.arrowImage(ArrowNames.North)
-let arrowSouth= images.arrowImage(ArrowNames.South)
-let counter = 0
-let modulo = 0
-
 input.onButtonPressed(Button.A, function () {
-    counter = counter + 1   
+    counter = counter + 1
     modulo = counter % 4
     switch(modulo) {
         case 0:
@@ -21,17 +14,18 @@ input.onButtonPressed(Button.A, function () {
         case 3:
             arrowSouth.showImage(0);
             break
-    } 
- 
-
-
+    }
 })
-
 input.onButtonPressed(Button.B, function () {
-    radio.sendString(modulo.toString())
+    radio.sendString("" + (modulo.toString()))
 })
-
-
+let counter = 0
+radio.setGroup(1)
+let modulo = 0
+let arrowLeft = images.arrowImage(ArrowNames.West)
+let arrowRight = images.arrowImage(ArrowNames.East)
+let arrowNorth = images.arrowImage(ArrowNames.North)
+let arrowSouth = images.arrowImage(ArrowNames.South)
 basic.forever(function () {
 	
 })
